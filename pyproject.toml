@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "your-project-name"
+version = "0.1.0"
+description = "your-project-description"
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [{name = "your-name", email = "your-email"}]
+
+dependencies = [
+    "numpy",
+    "torch",
+    "matplotlib",
+    "wandb",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["template*"]
