@@ -6,6 +6,7 @@ A minimal Python project skeleton with best practices for packaging and developm
 
 - Python 3.9 or higher
 - pip (usually comes with Python)
+- ipykernel
 
 ## Setup
 
@@ -30,7 +31,19 @@ authors = [{name = "Your Name", email = "your.email@example.com"}]  # Change thi
 
 **Important:** Make sure to set a real project name (not `[project-name]`).
 
-### 3. Initialize Project Structure
+### 3. Add Dependencies
+
+Edit `pyproject.toml` and add your dependencies:
+
+```toml
+dependencies = [
+    "requests>=2.31.0",
+    "numpy>=1.24.0",
+]
+```
+
+
+### 4. Initialize Project Structure
 
 Run the setup script to automatically create your package structure:
 
@@ -45,7 +58,7 @@ This will:
 - Create `src/<package_name>/__init__.py` with version info
 - Update `pyproject.toml` package discovery settings
 
-### 4. Create a Virtual Environment
+### 5. Create a Virtual Environment
 
 **Windows:**
 ```powershell
@@ -59,7 +72,7 @@ python -m venv venv
 source venv/bin/activate
 ```
 
-### 5. Install the Package
+### 6. Install the Package
 
 **For development (editable install with dev dependencies):**
 ```bash
@@ -69,20 +82,4 @@ pip install -e ".[dev]"
 **For production (runtime dependencies only):**
 ```bash
 pip install .
-```
-
-## Adding Dependencies
-
-Edit `pyproject.toml` and add your dependencies:
-
-```toml
-dependencies = [
-    "requests>=2.31.0",
-    "numpy>=1.24.0",
-]
-```
-
-Then reinstall:
-```bash
-pip install -e ".[dev]"
 ```

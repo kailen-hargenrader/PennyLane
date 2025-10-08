@@ -1,1 +1,6 @@
 *.egg-info/
+_pycache_/
+venv/
+*.pyc
+.vscode/
+build/
